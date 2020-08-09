@@ -1,0 +1,70 @@
+<div class="container d-flex justify-content-center align-items-center h500">
+  <div class="col-md-6 col-md-6 border border-primery p-3">
+    <h3 class="px-3">Login</h3>
+    <form class="form-horizontal" [formGroup]="loginForm" (submit)="logForm()">
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error': frm.useremail.touched && frm.useremail.invalid
+        }"
+      >
+        <label for="userpwd" class="control-label col-sm-12">Email ID: </label>
+        <div class="col-sm-12">
+          <input
+            type="email"
+            class="form-control"
+            formControlName="useremail"
+            id="useremail"
+            required
+          />
+        </div>
+        <div
+          class="col-sm-12 help-block"
+          *ngIf="frm.useremail.touched && frm.useremail.invalid"
+        >
+          <p>Email Id is required.</p>
+        </div>
+        <div *ngIf="frm.useremail.touched && frm.useremail.errors?.required">
+          Email is not valid.
+        </div>
+      </div>
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error': frm.userpwd.touched && frm.userpwd.invalid
+        }"
+      >
+        <label for="userpwd" class="control-label col-sm-12">Password: </label>
+        <div class="col-sm-12">
+          <input
+            type="password"
+            class="form-control"
+            formControlName="userpwd"
+            id="userpwd"
+          />
+        </div>
+        <div
+          class="col-sm-12 help-block"
+          *ngIf="frm.userpwd.touched && frm.userpwd.invalid"
+        >
+          <p>Password is required.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="loginForm.invalid"
+          >
+            Save
+          </button>
+          <button type="reset" class="btn btn-default">Reset</button>
+          <a [routerLink]="['register']" class="inline-block float-right">
+            SignUp</a
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+.has-error .ng-valid[required],
+.has-error .ng-valid.required {
+  border: 1px solid #cf2323; /* green */
+}
+
+.has-error .ng-invalid:not(form) {
+  border: 1px solid #cf2323; /* red */
+}
+.has-error p {
+  color: #cf2323;
+}
+.h500 {
+  height: 500px;
+}
+.h800 {
+  height: 800px;
+}
+.navbar-nav.navbar-nav-r {
+  flex-direction: row-reverse;
+  width: 100%;
+}
